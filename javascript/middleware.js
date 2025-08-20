@@ -1,18 +1,15 @@
-const http = require('http');
 const express = require('express');
-
-const app = express();  
+const app = express();
 
 app.use((req, res, next) => {
-    console.log('request received');
+    console.log('In the middleware');
+    res.send('<h1>Hi from Express!</h1>');
     next();
 });
 
-app.use ((req, res, next )=> {
-    console.log('request processed');
-    res.send('Hello World');
+app.use((req, res, next) => {
+    console.log('In another middleware');
 });
 
-const server = http.createServer(app);
-
-server.listen(3000);
+app.listen(3000);
+console.log('Server is running on port 3000');
