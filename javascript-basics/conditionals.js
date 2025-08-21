@@ -23,8 +23,8 @@ if (age < 13) {
 }
 
 // Ternary operator
-const status = age >= 18 ? 'adult' : 'minor';
-console.log(`Status: ${status}`);
+const ageStatus = age >= 18 ? 'adult' : 'minor';
+console.log(`Status: ${ageStatus}`);
 
 // Logical operators
 const canDrive = age >= 16 && hasLicense;
