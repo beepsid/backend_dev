@@ -4,29 +4,23 @@ console.log('=== Loops ===');
 const fruits = ['apple', 'banana', 'orange', 'grape'];
 const numbers = [1, 2, 3, 4, 5];
 
-// For loop
-console.log('For loop:');
-for (let i = 0; i < fruits.length; i++) {
-    console.log(`${i}: ${fruits[i]}`);
-}
-
 // For...of loop (values)
-console.log('\nFor...of loop:');
-for (const fruit of fruits) {
-    console.log(fruit);
+console.log('For...of loop:');
+for (const fruit of fruits){
+    console.log(`${fruit}`);
 }
 
 // For...in loop (indexes/keys)
 console.log('\nFor...in loop:');
-for (const index in fruits) {
-    console.log(`${index}: ${fruits[index]}`);
+for (const i in fruits){
+    console.log(`${i}: ${fruits[i]}`);
 }
 
 // While loop
 console.log('\nWhile loop:');
 let count = 0;
-while (count < 3) {
-    console.log(`Count: ${count}`);
+while (count < 3){
+    console.log(`Count: ${count}`)
     count++;
 }
 
