@@ -56,4 +56,4 @@ console.log('Found fruit:', foundFruit);
 const hasLongFruit = fruits.some(fruit => fruit.length > 6);
 const allStrings = fruits.every(fruit => typeof fruit === 'string');
 console.log('Has long fruit:', hasLongFruit);
-console.log('All strings:', allStrings);
+console.log('Has all strings:', allStrings);
