@@ -1,12 +1,12 @@
 // String methods and manipulation
 console.log('=== Strings ===');
 
-const text = 'JavaScript is awesome';
-const name = 'John';
+const text = 'Hi i am Senzaei';
+const uname = 'John';
 const age = 25;
 
 // Template literals
-const greeting = `Hello, my name is ${name} and I am ${age} years old`;
+const greeting = `Hello, my name is ${uname} and I am ${age} years old`;
 console.log(greeting);
 
 // Multi-line strings
@@ -44,8 +44,8 @@ console.log('Join:', words.join('-'));
 
 // Trimming
 const messyString = '  hello world  ';
-console.log('Original:', `"${messyString}"`);
-console.log('Trimmed:', `"${messyString.trim()}"`);
+console.log(`Original: ${messyString}`);
+console.log(`Trimmed: ${messyString.trim()}`);
 
 // Padding
 const number = '5';
@@ -55,4 +55,4 @@ console.log('Pad end:', number.padEnd(3, '0'));     // "500"
 // Character access
 console.log('First char:', text[0]);
 console.log('Last char:', text[text.length - 1]);
-console.log('Char at 4:', text.charAt(4));
+console.log('Char at 4:', text.charAt(5));
