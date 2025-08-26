@@ -1,25 +1,23 @@
 const person = {
-    name: 'sid',
+    name:'sid',
     age: 21,
-    greet() {
-        console.log('Hi, i am ' + person.name());
+    greet(){
+        console.log('This is '+ person.name);
     }
 };
 
-const printname = (persondata) => {
+const personname=(persondata) =>{
     console.log(persondata.name);
-}
+};
 
-const printing = ({ name, age }) => {
+const personinfo = ({name, age})=>{
     console.log(name);
     console.log(age);
 }
 
+personname(person);
+personinfo(person);
 
-printname(person);
-printing(person);
-
-
-const hobbies = ['sports', 'cooking'];
-const [hobby1, hobby2] = hobbies;
-console.log(hobby1, hobby2);
+const hobbies = ['sports','cooking','running'];
+const [hobby1, hobby2, hobby3] = hobbies;
+console.log(hobby1, hobby3);
