@@ -1,23 +1,26 @@
-const fetchdata = () =>{
-    const promise = new Promise((resolve, reject)=> {
-    setTimeout(() => {
-        resolve("Done!")
-    }, 1500)
-  });
-    return promise;
-}
+console.log('hi this is async code!, give us a moment');
 
-setTimeout(() => {
-    console.log("time is done!")
+const fetchdata = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log('fetching data...');
+            resolve(); // Add resolve to complete the promise
+        }, 1000);
+    });
+};
+
+
+const displaydata = (name, age) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log('data fetched...');
+            console.log(`hi my name is ${name} and i am ${age}`);
+            resolve(); // Add resolve to complete the promise
+        }, 1500);
+    });
+};
+
+setTimeout((name, age) => {
     fetchdata()
-    .then(text => {
-        console.log(text);
-        return fetchdata();
-    })
-    .then(text2=>{
-        console.log(text2);
-    })
-}, 2000);
-
-console.log('hi')
-console.log('hello')
+        .then(() => displaydata(name, age));
+}, 1000, 'sid', '21');
