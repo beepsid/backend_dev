@@ -7,23 +7,23 @@ class Person {
         this.name = name;
         this.age = age;
     }
-    
+
     greet() {
         return `Hi, I'm ${this.name} and I'm ${this.age} years old`;
     }
-    
+
     // Getter
     get info() {
         return `${this.name} (${this.age})`;
     }
-    
+
     // Setter
     set newAge(age) {
         if (age > 0) {
             this.age = age;
         }
     }
-    
+
     // Static method
     static species() {
         return 'Homo sapiens';
@@ -38,20 +38,39 @@ console.log(john.age);
 console.log(Person.species());
 
 // Inheritance
+class Teacher extends Person {
+    constructor(name, age, subject) {
+        super(name, age);
+        this.subject = subject;
+    }
+
+    greet() {
+        return super.greet() + ' and I teach ' + this.subject;
+    }
+
+    teaching() {
+        return this.name + ' is teaching.';
+    }
+}
+
 class Student extends Person {
     constructor(name, age, grade) {
         super(name, age); // Call parent constructor
         this.grade = grade;
     }
-    
+
     greet() {
         return `${super.greet()} and I'm in grade ${this.grade}`;
     }
-    
+
     study() {
         return `${this.name} is studying`;
     }
 }
+
+const teacher = new Teacher('Mr. Smith', 35, 'Mathematics');
+console.log(teacher.greet());
+console.log(teacher.teaching());
 
 const alice = new Student('Alice', 20, 'A');
 console.log(alice.greet());
@@ -60,17 +79,17 @@ console.log(alice.study());
 // Private fields (modern JavaScript)
 class BankAccount {
     #balance = 0; // Private field
-    
+
     constructor(owner) {
         this.owner = owner;
     }
-    
+
     deposit(amount) {
         if (amount > 0) {
             this.#balance += amount;
         }
     }
-    
+
     getBalance() {
         return this.#balance;
     }
