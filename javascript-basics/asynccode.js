@@ -9,6 +9,14 @@ const fetchdata = () => {
     });
 };
 
+const waittime = () =>{
+    return new Promise((resolve,reject)=>{
+        setTimeout(() => {
+            console.log('just a moment...');
+            resolve();
+        }, 1000);
+    });
+};
 
 const displaydata = (name, age) => {
     return new Promise((resolve, reject) => {
@@ -22,5 +30,6 @@ const displaydata = (name, age) => {
 
 setTimeout((name, age) => {
     fetchdata()
-        .then(() => displaydata(name, age));
+    .then(() => waittime())
+    .then(() => displaydata(name, age));
 }, 1000, 'sid', '21');
