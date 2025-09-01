@@ -2,26 +2,24 @@
 console.log('=== Error Handling ===');
 
 // Basic try-catch
-try {
-    let result = 10 / 0;
-    console.log('Result:', result); // Infinity (not an error in JS)
-    
-    // This will cause an error
-    let obj = null;
-    console.log(obj.property); // TypeError
-} catch (error) {
-    console.log('Caught error:', error.message);
-    console.log('Error type:', error.name);
-} finally {
+try{
+    let result = 10/0;
+    console.log('Result: ', result);
+    let obj=null;
+    console.log(obj.property);
+}catch(error){
+    console.log('Caught error: ', error.message);
+    console.log('Error type', error.name);
+}finally{
     console.log('This always runs');
 }
 
 // Throwing custom errors
-function divide(a, b) {
-    if (b === 0) {
-        throw new Error('Division by zero is not allowed');
+function divide(a,b){
+    if(b==0){
+        throw new Error('Division by 0 is not allowed');
     }
-    return a / b;
+    return a/b;
 }
 
 try {
@@ -59,18 +57,18 @@ function demonstrateErrors() {
 demonstrateErrors();
 
 // Async error handling
-async function asyncErrorExample() {
-    try {
-        // Simulate async operation that fails
-        await new Promise((_, reject) => {
-            setTimeout(() => reject(new Error('Async operation failed')), 100);
+async function asyncerror(){
+    try{
+        await new Promise((_,reject)=>{
+            setTimeout(()=> reject(new Error('Async operation failed')),
+        100);
         });
-    } catch (error) {
-        console.log('Async error:', error.message);
+    }catch(error){
+        console.log('Async error: ', error.message);
     }
 }
 
-asyncErrorExample();
+asyncerror();
 
 // Error handling with promises
 Promise.reject(new Error('Promise rejected'))
