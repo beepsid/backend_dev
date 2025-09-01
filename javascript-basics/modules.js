@@ -33,9 +33,6 @@ const mathUtils = {
 console.log('Math utils:', mathUtils);
 console.log('Add 5 + 3:', mathUtils.add(5, 3));
 
-// ES6 Modules (modern JavaScript)
-// These would be in separate files with .mjs extension or type: "module" in package.json
-
 /*
 // math.js
 export function add(a, b) {
