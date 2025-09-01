@@ -62,7 +62,7 @@ demonstrateErrors();
 async function asyncErrorExample() {
     try {
         // Simulate async operation that fails
-        await new Promise((resolve, reject) => {
+        await new Promise((_, reject) => {
             setTimeout(() => reject(new Error('Async operation failed')), 100);
         });
     } catch (error) {
