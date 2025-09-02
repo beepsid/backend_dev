@@ -10,7 +10,7 @@ const server = http.createServer((req, res) => {
     
     // Write response
     res.write('<h1>Hello from Node.js!</h1>');
-    res.write('<p>This is a basic HTTP server</p>');
+    res.write('<p>This is a test HTTP server</p>');
     res.write(`<p>Request URL: ${req.url}</p>`);
     res.write(`<p>Request Method: ${req.method}</p>`);
     
